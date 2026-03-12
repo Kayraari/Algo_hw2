@@ -43,6 +43,6 @@ public class LinkedList {
         Stack minStack = new Stack(null);
         //added two stacks, one for storing the min values
 
-        mainStack.push(V);
+
 
 }
