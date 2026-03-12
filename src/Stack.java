@@ -26,7 +26,9 @@
             }
             size++;
         }
-
+        public void getNewMin(Node data){
+            //we compare the new value to the old min. if the new value in smaller it becomes the new min
+        }
         public Object pop() { return -1;}// Object instead of int
 
 
