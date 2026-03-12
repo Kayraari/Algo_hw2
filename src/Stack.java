@@ -16,8 +16,8 @@
             this.top = top;
         }
 
-        public void push(Object data) {
-            Node newNode = new Node(data, null);
+        public void push(Object V) {
+            Node newNode = new Node(V, null);
             if (top == null) {
                 top = newNode;
             } else {
@@ -27,22 +27,11 @@
             size++;
         }
 
-        public Object pop() {          // Object instead of int
-            if (top == null) {
-                return null;           // null instead of -1
-            }
-            Object val = top.getData();
-            top = top.getNext();
-            size--;
-            return val;
-        }
+        public Object pop() { return -1;}// Object instead of int
+
 
         public void printStack() {
-            Node current = top;
-            while (current != null) {
-                System.out.print(current.getData() + " ");
-                current = current.getNext();
-            }
+
         }
 
     }
