@@ -3,12 +3,14 @@
 public class LinkedList {
 
     protected Node head;
+    protected Node tail;
     public long size;
     protected int min;
 
 
     public LinkedList(Node head){ //sizeı constructora koymak
         this.head=head;
+        this.tail=head;
         if (head!=null){
             this.size=1;
 
@@ -19,6 +21,8 @@ public class LinkedList {
     }
     public Node getHead(){ return head; }
     public void setHead(Node head){ this.head=head; }
+    public Node getTail(){return tail;}
+    public void setTail(Node tail){this.tail=tail;}
     public long getSize(){ return size; }
     public void setSize(long size){ this.size=size; }
     public int getMin(){ return min; }

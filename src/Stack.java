@@ -28,7 +28,7 @@
             }
             size++;
         }
-        public void getNewMin(Node data){
+        public void getNewMin(){
             //we compare the new value to the old min. if the new value in smaller it becomes the new min
             Node current=list.head;
 
@@ -41,7 +41,21 @@
                 current=current.next; // current next is the new current so it will check in the loop if it is the new minimum or not
             }
         }
-        public Object pop() { return -1;}// Object instead of int
+        public void pop() {
+            Node current=list.head;
+
+            if(list.head==list.tail){ //if head is also tail when it pops head and tail will be be null
+                list.head=null;
+                list.tail=null;
+            }else{
+                while(current.getNext()!=list.tail){ // get node before tail
+                    current=current.getNext();
+                }
+                current=list.tail;
+            }
+            size--;
+            getNewMin();// this checks if min was deleted so it updates the min
+        }
 
 
         public void printStack() {
