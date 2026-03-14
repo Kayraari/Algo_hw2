@@ -1,15 +1,21 @@
-import static sun.jvm.hotspot.oops.CellTypeState.top;
+
 
 public class LinkedList {
 
     protected Node head;
-    protected long size;
+    public long size;
     protected int min;
 
-    public LinkedList(Node head, long size, int min){ //sizeı constructora koymak
+
+    public LinkedList(Node head){ //sizeı constructora koymak
         this.head=head;
-        this.size=size; //şunu bir yapın aq
-        this.min=min;
+        if (head!=null){
+            this.size=1;
+
+        }else{
+            this.size=0;
+        }
+
     }
     public Node getHead(){ return head; }
     public void setHead(Node head){ this.head=head; }
