@@ -42,7 +42,6 @@
             }
         }
         public void pop() {
-            //removes top element, updates min stack if min is removed
             if (top == null) {
                 System.out.println("Empty");
                 return;
