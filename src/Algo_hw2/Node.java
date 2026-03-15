@@ -1,3 +1,4 @@
+package Algo_hw2;
 
     public class Node {
         protected Object data;

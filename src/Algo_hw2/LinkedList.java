@@ -1,5 +1,5 @@
 
-
+package Algo_hw2;
 public class LinkedList {
 
     protected Node head;
@@ -8,7 +8,7 @@ public class LinkedList {
     protected int min;
 
 
-    public LinkedList(Node head){ //sizeı constructora koymak
+    public LinkedList(Node head){
         this.head=head;
         this.tail=head;
         if (head!=null){
@@ -34,6 +34,8 @@ public class LinkedList {
         head=data;
         size++;
         }
+
+
         public void removeFirst(){
         Node data=head;
         head=head.getNext();
