@@ -49,6 +49,7 @@
             int removed = (Integer) top.data;
             top = top.next;
             size--;
+            //if the current min is removed pop min Stack too
             if( minTop!=null&& removed == (Integer) minTop.data){
                 minTop = minTop.next;
             }
