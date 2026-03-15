@@ -42,22 +42,17 @@
             }
         }
         public void pop() {
-            Node current=list.head;
-
-            if(list.head==list.tail){ //if head is also tail when it pops head and tail will be be null
-                list.head=null;
-                list.tail=null;
-            }else{
-                while(current.getNext()!=list.tail){ // get node before tail
-                    current=current.getNext();
-                }
-                current=list.tail;
+            if (top == null) {
+                System.out.println("Empty");
+                return;
             }
+            int removed = (Integer) top.data;
+            top = top.next;
             size--;
-            getNewMin();// this checks if min was deleted so it updates the min
+            if( minTop!=null&& removed == (Integer) minTop.data){
+                minTop = minTop.next;
+            }
         }
-
-
         public void printStack() {
             Node current =top;
             while(current !=null){
