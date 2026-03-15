@@ -3,22 +3,18 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-    Scanner keyboard = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
     Stack stack= new Stack(null, null);
+        String choice = input.nextLine();
 
-        int n = keyboard.nextInt();
-        for(int i=0; i<n; i++){
-            String input = keyboard.next();
-
-            if(input.equals("ADD")){
-                int V = keyboard.nextInt(); //this reads the V value
-                stack.push(V);
-            } else if( input.equals("DEL")){
-                stack.pop();
-            } else if( input.equals("MIN")){
-                stack.getNewMin();
-            }
+        if(choice.equals("ADD")){ //bu sikintili olmayacak substring kullancaz
+            int V = input.nextInt(); //this reads the V value
+            stack.push(V);
+        } else if( choice.equals("DEL")){
+            stack.pop();
+        } else if( choice.equals("MIN")){
+            stack.getNewMin();
         }
-        keyboard.close();
+        input.close();
     }
-}
+    }
