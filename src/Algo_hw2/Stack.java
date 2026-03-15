@@ -1,26 +1,28 @@
 package Algo_hw2;
 
 public class Stack {
-    Node top;
-    Node minTop;
-    int size;
+    Node top; //Top of the main stack
+    Node minTop; //Top of the min tracking stack
+    int size; //Number of elements in stack
     LinkedList list;
 
-    public Stack(Node top, Node minTop) {
+    public Stack(Node top, Node minTop) { //Constructor that initializes the stack
         this.top = top;
         this.minTop = minTop;
         size = 0;
         this.list = new LinkedList(null);
     }
 
-    public Node getTop() {
+    public Node getTop() { //Returns top Node
         return top;
     }
 
-    public void setTop(Node top) {
+    public void setTop(Node top) { //Sets top Node
         this.top = top;
     }
 
+    //Pushes a new value onto the top of the stack, also updates the min value if the new value is less than
+    // or equal to the previos min value
     public void push(Object V) {
         Node newNode = new Node(V, null);
 
@@ -33,7 +35,7 @@ public class Stack {
 
         size++;
 
-        // update the min stack
+        //Update the min stack
         if (minTop == null || (Integer) V <= (Integer) minTop.data) {
             Node minNode = new Node(V, null);
             minNode.setNext(minTop);
@@ -41,6 +43,7 @@ public class Stack {
         }
     }
 
+    //Prints the min value in the stack using the min stack.
     public int getNewMin() {
         if (top == null) {
             return -1;
@@ -58,7 +61,7 @@ public class Stack {
 
         return min;
     }
-
+     //Removes the top element from the stack. also pops the min stack if the removed value was the minimum
     public void pop() {
         if (top == null) {
             return;
@@ -72,7 +75,7 @@ public class Stack {
             minTop = minTop.next;
         }
     }
-
+    //Prints all elements from the stack from top to bottom
     public void printStack() {
         Node current = top;
         while (current != null) {
