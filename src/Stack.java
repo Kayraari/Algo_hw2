@@ -1,11 +1,14 @@
 
     public class Stack {
         Node top;
+        Node minTop;
         int size;
+
         LinkedList list;
 
-        public Stack(Node top) {
+        public Stack(Node top, Node minTop) {
             this.top = top;
+            this.minTop=minTop;
             size = 0;
             this.list= new LinkedList(null);
         }
@@ -13,7 +16,6 @@
         public Node getTop() {
             return top;
         }
-
         public void setTop(Node top) {
             this.top = top;
         }
@@ -27,6 +29,12 @@
                 top = newNode;
             }
             size++;
+            //update the min Stack
+            if(minTop ==null || (Integer) V <=(Integer) minTop.data){
+                Node minNode = new Node(V,null);
+                minNode.setNext(minTop);
+                minTop =minNode;
+            }
         }
         public void getNewMin(){
             //we compare the new value to the old min. if the new value in smaller it becomes the new min
@@ -59,7 +67,12 @@
 
 
         public void printStack() {
-
+        Node current =top;
+        while(current !=null){
+            System.out.print(current.data +" ");
+            current = (Node) current.data;
+        }
+        System.out.println();
         }
 
     }
