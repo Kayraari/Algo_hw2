@@ -7,7 +7,7 @@ public class Stack {
         int size;
         LinkedList list;
 
-        public Stack(Node top, Node minTop) {
+        public Stack(Node top, Node minTop, LinkedList list) {
             this.top = top;
             this.minTop=minTop;
             size = 0;
