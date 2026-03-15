@@ -1,9 +1,25 @@
 package Algo_hw2;
 
 import java.util.Scanner;
-
+//
+// Title: Main class
+// Author: Kayra Arı-Elçin Karagül
+// ID: 10001507-10885319050
+// Section: 4
+// Assignment: Hw1-Q2
+// Description: This class reads N operations from standard input and
+//              dispatches them to the appropriate stack methods.
+//              Operations supported are ADD, DEL, and MIN.
+//
 public class Main {
-    //Main method that reads N operations from input and dispatches them to the appropriate stack methods
+    //
+    // Summary: Main method that reads N operations from input and dispatches
+    //          them to the appropriate stack methods.
+    // Precondition: First line is an integer N (number of operations),
+    //               followed by N lines of "ADD V", "DEL", or "MIN"
+    // Postcondition: Prints the minimum value for MIN operations,
+    //                prints "Empty" for MIN and DEL when stack is empty
+    //
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Stack stack = new Stack(null, null);
