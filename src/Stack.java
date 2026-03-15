@@ -4,13 +4,10 @@
         Node minTop;
         int size;
 
-        LinkedList list;
-
         public Stack(Node top, Node minTop) {
             this.top = top;
             this.minTop=minTop;
             size = 0;
-            this.list= new LinkedList(null);
         }
 
         public Node getTop() {
@@ -20,7 +17,7 @@
             this.top = top;
         }
 
-        public void push(Object V) {//bu degısebilir
+        public void push(Object V) {
             Node newNode = new Node(V, null);
             if (top == null) {
                 top = newNode;
@@ -37,16 +34,11 @@
             }
         }
         public void getNewMin(){
-            //we compare the new value to the old min. if the new value in smaller it becomes the new min
-            Node current=list.head;
-
-            int min= 110; // now minimum is the maximum int possible
-            while(current!=null){
-                if((Integer)current.data<min){ // we casted the current data bcs its data is object and not int
-                    min=(Integer)current.data;
-
-                }
-                current=current.next; // current next is the new current so it will check in the loop if it is the new minimum or not
+            //prints current min or empty if stack is empty
+            if(minTop==null){
+                System.out.println("Empty");
+            } else{
+                System.out.println((Integer) minTop.data);
             }
         }
         public void pop() {
