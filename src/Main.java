@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
     Scanner keyboard = new Scanner(System.in);
-    Stack stack= new Stack(null, null);  // şimdilik null yazdım idk
+    Stack stack= new Stack(null, null);
 
         int n = keyboard.nextInt();
         for(int i=0; i<n; i++){
