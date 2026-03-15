@@ -47,8 +47,8 @@ public class LinkedList {
             else { System.out.println("Top is empty."); }
         }
         */
-        Stack mainStack= new Stack(null);
-        Stack minStack = new Stack(null);
+        Stack mainStack= new Stack(null,null);
+        Stack minStack = new Stack(null, null);
         //added two stacks, one for storing the min values
 
 
