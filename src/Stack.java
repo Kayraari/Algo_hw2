@@ -67,8 +67,8 @@
 
 
         public void printStack() {
-        Node current =top;
-        while(current !=null){
+            Node current =top;
+            while(current !=null){
             System.out.print(current.data +" ");
             current = (Node) current.data;
         }
